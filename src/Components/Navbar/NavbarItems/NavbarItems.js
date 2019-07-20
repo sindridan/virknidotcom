@@ -9,10 +9,10 @@ const NavbarItems = () => {
                 <Link to="/about-me" className="nav-link">About me</Link>
             </li>
             <li className="nav-item">
-                <Link exact to="https://github.com/sindridan" className="nav-link">My GitHub</Link>
+                <a href="https://github.com/sindridan" className="nav-link">My GitHub</a>
             </li>
             <li className="nav-item">
-                <Link exact to="https://github.com/sindridan" className="nav-link">My GitHub</Link>
+                <a href="https://linkedin.com/in/sindridan" className="nav-link">My LinkedIn</a>
             </li>
 
             <li className="nav-item">
