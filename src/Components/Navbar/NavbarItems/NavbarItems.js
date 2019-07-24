@@ -4,18 +4,19 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import styled from 'styled-components';
 
 const NavItemContainer = styled.div`
-    background-color: #dbf2cb;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: row;
+    height: 100px;
 
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+    position: relative;
 `
 
 const NavItem = styled.div`
-    height: 100%;
+    height: auto;
     width: auto;
   
     a, Link {
@@ -30,8 +31,12 @@ const NavItem = styled.div`
     a:hover, a:active { text-decoration: none; color:black }
 `
 const LogoImg = styled.img`
-    max-height: 120px;
+    max-height: 100px;
     max-width: auto;
+
+    position: absolute;
+    top: 0;
+    left: 0;
 `
 
 const NavbarItems = () => {

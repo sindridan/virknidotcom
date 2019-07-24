@@ -1,0 +1,23 @@
+[
+    {
+        "name": "About me",
+        "linktype": "internal",
+        "link": "/about-me"
+    },
+    {
+        "name": "My GitHub",
+        "linktype": "external",
+        "link": "https://github.com/sindridan"
+    },
+    {
+        "name": "My LinkedIn",
+        "linktype": "external",
+        "link": "https://linkedin.com/in/sindridan"
+    },
+    {
+        "name": "My CV",
+        "linktype": "internal",
+        "link": "/my-cv"
+    }
+
+]

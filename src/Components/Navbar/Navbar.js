@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const NavbarContainer = styled.div`
   background-color: #cbeaf2;
-  padding: 20px;
+  overflow: auto;
 `
 
 class Navbar extends Component {

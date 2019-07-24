@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 .App {
   max-width: 100%;
   max-height: auto;
@@ -17,6 +19,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  font-family: 'Montserrat', sans-serif;
   color: darkslategrey;
 }
 

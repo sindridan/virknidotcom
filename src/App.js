@@ -13,7 +13,6 @@ const BodyContainer = styled.div`
     align-item: center;
 `
 
-
 function App() {
   return (
     <div className="App">
