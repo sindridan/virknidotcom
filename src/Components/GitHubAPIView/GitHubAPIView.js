@@ -1,21 +1,25 @@
 import React from 'react';
 import RepoListView from '../RepoListView/RepoListView';
+import { gitAPI } from '../../Services/GitHubAPIService'
  
-class FrontPage extends React.Component {
+class GitHubAPIView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            gitData: []
+            gitData: [],
+            langs: []
         };
     }
     
     componentDidMount() {
+        console.log(gitAPI())
         fetch('https://api.github.com/users/sindridan/repos')
         .then(res => res.json())
         .then(
             (result) => {
                 this.setState({
-                    gitData: result
+                    gitData: result,
+                    langs: result.map(function(el)  {return el.language })
                 })
             }
         )
@@ -23,12 +27,13 @@ class FrontPage extends React.Component {
 
 
     render() {
-        const { gitData } = this.state;
+        const { gitData, langs } = this.state;
         return (
             <div>
                 <RepoListView list={ gitData } />
+                <div list={ langs }></div>
             </div>
     )}
 };
 
-export default FrontPage;
+export default GitHubAPIView;

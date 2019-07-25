@@ -1,5 +1,5 @@
 import React from 'react';
-import FrontPage from './Components/FrontPage/FrontPage';
+import GitHubAPIView from './Components/GitHubAPIView/GitHubAPIView';
 import NavBar from './Components/Navbar/Navbar';
 import './App.css';
 import styled from 'styled-components';
@@ -21,7 +21,7 @@ function App() {
       <NavBar />
       <BodyContainer>
         <Switch>
-            <Route exact path="/" component={ FrontPage } />
+            <Route exact path="/" component={ GitHubAPIView } />
             <Route path="*" render={() => <div>404 Not found</div>} />
         </Switch>
       </BodyContainer>
