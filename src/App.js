@@ -1,8 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+import FrontPage from './Components/FrontPage/FrontPage';
 import NavBar from './Components/Navbar/Navbar';
 import './App.css';
 import styled from 'styled-components';
+import { Switch, Route, Redirect } from 'react-router-dom';
+
 
 const BodyContainer = styled.div`
     background-color: lightblue;
@@ -18,12 +20,18 @@ function App() {
     <div className="App">
       <NavBar />
       <BodyContainer>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+        <Switch>
+            <Route exact path="/" component={ FrontPage } />
+            <Route path="*" render={() => <div>404 Not found</div>} />
+        </Switch>
       </BodyContainer>
     </div>
   );
 }
 
 export default App;
+/*
+<Route exact path="/about" component={ About } />
+<Route exact path="/my-cv" component={ MyCV } />
+<Route path="*" render={() => <div>404 Not found</div>} />
+*/
