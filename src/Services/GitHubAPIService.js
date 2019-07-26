@@ -1,13 +1,19 @@
-var gitAPI = () => {
+var gitLangs = () => {
     fetch('https://api.github.com/users/sindridan/repos').then(response => response.json()).then(response => {
-        console.log(response.map(function(el)  {return el.language }));
-        return response.map(function(el)  {return el.language })
-        
+        var langs = response.map(function(el)  {return el.language }).filter(Boolean)
     })
 };
 
-var getLanguages = () => gitAPI().map(function(el)  {return el.language })
+function langsFilter (results) {
+    return results.map(function(el) {return el.language}).filter(Boolean)
+}
+
+function sortedLangs (langs) {
+    var sorted = {}
+    langs.forEach(function(i) { sorted[i] = (sorted[i] || 0) + 1})
+    return sorted
+}
 
 export {
-    gitAPI, getLanguages
+    gitLangs, langsFilter, sortedLangs
 };
