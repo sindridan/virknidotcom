@@ -2,6 +2,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import styled from 'styled-components';
+import sdgLogo from '../../../artefacts/bigstan.PNG';
+
 
 const NavItemContainer = styled.div`
     padding: 0;
@@ -43,20 +45,13 @@ const NavbarItems = () => {
     return (
         <NavItemContainer>
             <NavItem>
-                <Link to="/" className="nav-link"><LogoImg src="https://vectr.com/tmp/c11FHuwddZ/bCzZxsYpk.svg?width=500&height=499.9999999999999&select=a2tZO4AjtH,f2wCwegQPW&source=selection" alt="sdglogo"/></Link>
-            </NavItem>
-            <NavItem>
-                <Link to="/about-me" className="nav-link">About me</Link>
+                <Link to="/" className="nav-link"><LogoImg src={sdgLogo} alt="sdglogo"/></Link>
             </NavItem>
             <NavItem>
                 <a href="https://github.com/sindridan" className="nav-link">My GitHub</a>
             </NavItem>
             <NavItem>
                 <a href="https://linkedin.com/in/sindridan" className="nav-link">My LinkedIn</a>
-            </NavItem>
-
-            <NavItem>
-                <Link to="/my-cv" className="nav-link">My CV</Link>
             </NavItem>
         </NavItemContainer>
     );

@@ -4,6 +4,8 @@ import NavBar from './Components/Navbar/Navbar';
 import './App.css';
 import styled from 'styled-components';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import PieChart from 'react-minimal-pie-chart';
+
 
 
 const BodyContainer = styled.div`
