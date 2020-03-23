@@ -3,8 +3,11 @@ import NavbarItems from "./NavbarItems/NavbarItems"
 import styled from 'styled-components';
 
 const NavbarContainer = styled.div`
-  background-color: #cbeaf2;
+  /*background-color: #e0e0e0;*/
   overflow: auto;
+  padding-bottom: 1em;
+  padding-top: 1em;
+  border-bottom: 5px dotted #1C6EA4;
 `
 
 class Navbar extends Component {

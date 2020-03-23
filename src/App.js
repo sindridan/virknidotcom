@@ -4,12 +4,11 @@ import NavBar from './Components/Navbar/Navbar';
 import './App.css';
 import styled from 'styled-components';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import PieChart from 'react-minimal-pie-chart';
 
 
 
 const BodyContainer = styled.div`
-    background-color: lightblue;
+    background-color: #f5f5f5;
     display: flex;
     flex-direction: row;
 

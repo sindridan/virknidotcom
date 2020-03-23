@@ -37,6 +37,7 @@ const LogoImg = styled.img`
     max-width: auto;
 
     position: absolute;
+    border-radius: 50%;
     top: 0;
     left: 0;
 `
@@ -48,10 +49,10 @@ const NavbarItems = () => {
                 <Link to="/" className="nav-link"><LogoImg src={sdgLogo} alt="sdglogo"/></Link>
             </NavItem>
             <NavItem>
-                <a href="https://github.com/sindridan" className="nav-link">My GitHub</a>
+                <a href="https://github.com/sindridan" className="nav-link">GitHub</a>
             </NavItem>
             <NavItem>
-                <a href="https://linkedin.com/in/sindridan" className="nav-link">My LinkedIn</a>
+                <a href="https://linkedin.com/in/sindridan" className="nav-link">LinkedIn</a>
             </NavItem>
         </NavItemContainer>
     );

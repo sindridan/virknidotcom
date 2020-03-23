@@ -29,15 +29,28 @@ class GitHubAPIView extends React.Component {
         )
     }
 
+    mapLangs(langs)
+    {
+        var counts = {}
+        for (var i = 0; i < langs.length; i++) {
+            counts[langs[i]] = (counts[langs[i]] + 1) || 1;
+        }
+        //const langsMappedArr = Object.keys(counts).map(i => counts[i])
+        //console.log(langsMappedArr)
+        var arr = Object.entries(counts)
+        return arr
+    }
+
     render() {
         const { gitData, langs, mappedLangs } = this.state;
-        console.log(mappedLangs)
+        console.log(this.mapLangs(langs))
+        console.log(JSON.stringify(this.mapLangs(langs))) 
         return (
             <div>
                 <RepoListView list={ gitData } />
-                <div>{langs}</div>
                 <PieChart
                     data={[
+                        
                         { title: 'One', value: 10, color: '#E38627' },
                         { title: 'Two', value: 15, color: '#C13C37' },
                         { title: 'Three', value: 20, color: '#6A2135' },
