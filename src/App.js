@@ -1,6 +1,8 @@
 import React from 'react';
 import GitHubAPIView from './Components/GitHubAPIView/GitHubAPIView';
 import NavBar from './Components/Navbar/Navbar';
+import Footer from './Components/Footer/Footer';
+
 import './App.css';
 import styled from 'styled-components';
 import { Switch, Route, Redirect } from 'react-router-dom';
@@ -11,7 +13,6 @@ const BodyContainer = styled.div`
     background-color: #f5f5f5;
     display: flex;
     flex-direction: row;
-
     justify-content: center;
     align-item: center;
 `
@@ -26,6 +27,7 @@ function App() {
             <Route path="*" render={() => <div>404 Not found</div>} />
         </Switch>
       </BodyContainer>
+      <Footer />
     </div>
   );
 }

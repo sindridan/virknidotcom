@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 .App {
-  max-width: 50em;
+  max-width: 100%;
   max-height: auto;
   text-align: left;
 }
