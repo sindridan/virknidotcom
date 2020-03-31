@@ -16,6 +16,11 @@ const ProgLangIcon = styled.div`
 	img {max-width: 3em; height: auto;}
 `
 
+const CardDetails = styled.p`
+	font-style: italic;
+`
+
+
 function assignLangIcon(lang) {
 
 	switch(lang) {
@@ -51,7 +56,7 @@ const RepoViewItem = (props) => {
 				<ProgLangIcon>{assignLangIcon(props.repoItem.language)}</ProgLangIcon>
 				<div className="card-body">
 					<h4 className="card-title"><a href={ props.repoItem.html_url }>{props.repoItem.name}</a></h4>
-					<p className="card-text">{props.repoItem.description}</p>
+					<CardDetails>{props.repoItem.description}</CardDetails>
 				</div>
 			</CardSlaveholder>
 		</CardContainer>
