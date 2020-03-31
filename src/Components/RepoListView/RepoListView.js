@@ -1,12 +1,21 @@
 import React from 'react';
 import RepoViewItem from '../RepoViewItem/RepoViewItem';
+import styled from 'styled-components';
+
+
+const GitItemsUL = styled.ul`
+    list-style-type: none;
+    -webkit-padding-start: 0;
+
+`
+
 
 const RepoListView = (props) => {
     if(props) {
         return (
-            <ul className="list-view">
+            <GitItemsUL>
                 { props.list.map(repo => <RepoViewItem key={ repo.id } repoItem={ repo } />) }
-            </ul>
+            </GitItemsUL>
         );    
     } else { return (<div><h1>No Repos found</h1></div>) }
         

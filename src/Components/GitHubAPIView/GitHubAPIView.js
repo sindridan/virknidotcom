@@ -48,7 +48,6 @@ class GitHubAPIView extends React.Component {
         return (
             <div>
                 <RepoListView list={ gitData } />
-                
             </div>
     )}
 };
