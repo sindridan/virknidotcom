@@ -44,7 +44,8 @@ function assignLangIcon(lang) {
 }
 
 const RepoViewItem = (props) => {
-	return (
+	console.log(props.repoItem.language)
+	if(props.repoItem.language != null) { return (
 		<CardContainer>
 			<CardSlaveholder className="card border-dark mb-3">
 				<ProgLangIcon>{assignLangIcon(props.repoItem.language)}</ProgLangIcon>
@@ -54,7 +55,8 @@ const RepoViewItem = (props) => {
 				</div>
 			</CardSlaveholder>
 		</CardContainer>
-    );
+	);
+	} else {return null}
 };
 
 RepoViewItem.propTypes = {
