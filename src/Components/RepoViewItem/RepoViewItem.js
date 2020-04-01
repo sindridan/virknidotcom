@@ -6,6 +6,7 @@ import styled from 'styled-components';
 
 const CardContainer = styled.li`
 	{CardSlaveholder}:nth-child(even) {background: #454545}
+	padding: 0.5em;
 `
 
 const CardSlaveholder = styled.li`
