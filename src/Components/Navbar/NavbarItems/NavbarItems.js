@@ -14,6 +14,7 @@ const NavItemContainer = styled.div`
 
     align-items: center;
     justify-content: flex-end;
+
     position: relative;
 `
 
@@ -22,15 +23,20 @@ const NavItem = styled.div`
     width: auto;
   
     a, Link {
-        font-size: 30px;
+        font-size: 2em;
         text-decoration: none; 
         padding: 0 20px 0 20px;
-    } 
+        color: #b6b7b7;
+    }
 
-    a:visited { text-decoration: none; black; }
-    a:hover { text-decoration: none; color: green; }
-    a:focus { text-decoration: none; color:yellow; }
-    a:hover, a:active { text-decoration: none; color:black }
+    a:visited { text-decoration: none; #b6b7b7; }
+
+    a:hover, a:active { text-decoration: none; 
+        -moz-transition: all .2s ease-in;
+        -o-transition: all .2s ease-in;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        background-color: #454545; }
 `
 const LogoImg = styled.img`
     max-height: 100px;
@@ -46,7 +52,7 @@ const NavbarItems = () => {
     return (
         <NavItemContainer>
             <NavItem>
-                <Link to="/" className="nav-link"><LogoImg src={sdgLogo} alt="sdglogo"/></Link>
+                <Link to="/"><LogoImg src={sdgLogo} alt="sdglogo"/></Link>
             </NavItem>
             <NavItem>
                 <a href="https://github.com/sindridan" className="nav-link">GitHub</a>

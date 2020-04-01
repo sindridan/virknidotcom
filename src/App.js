@@ -36,5 +36,4 @@ export default App;
 /*
 <Route exact path="/about" component={ About } />
 <Route exact path="/my-cv" component={ MyCV } />
-<Route path="*" render={() => <div>404 Not found</div>} />
 */

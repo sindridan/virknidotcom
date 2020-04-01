@@ -7,6 +7,8 @@ import styled from 'styled-components';
 const CardContainer = styled.li`
 	{CardSlaveholder}:nth-child(even) {background: #454545}
 	padding: 0.5em;
+	border-radius: 0.2em;
+	margin: 0.5em 0 0.5em 0;
 `
 
 const CardSlaveholder = styled.li`
@@ -19,6 +21,13 @@ const ProgLangIcon = styled.div`
 
 const CardDetails = styled.p`
 	font-style: italic;
+`
+
+const GitRepoIcon = styled.a`
+	font-size: 2em;
+	text-decoration: none; 
+	color: #b6b7b7;
+
 `
 
 
@@ -56,7 +65,7 @@ const RepoViewItem = (props) => {
 			<CardSlaveholder className="card border-dark mb-3">
 				<ProgLangIcon>{assignLangIcon(props.repoItem.language)}</ProgLangIcon>
 				<div className="card-body">
-					<h4 className="card-title"><a href={ props.repoItem.html_url }>{props.repoItem.name}</a></h4>
+					<GitRepoIcon href={ props.repoItem.html_url }>{props.repoItem.name}</GitRepoIcon>
 					<CardDetails>{props.repoItem.description}</CardDetails>
 				</div>
 			</CardSlaveholder>
