@@ -10,7 +10,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 
 const BodyContainer = styled.div`
-    background-color: #f5f5f5;
+    background-color: #242424;
     display: flex;
     flex-direction: row;
     justify-content: center;
