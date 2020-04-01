@@ -14,6 +14,7 @@ const NavItemContainer = styled.div`
 
     align-items: center;
     justify-content: flex-end;
+    
 
     position: relative;
 `
@@ -51,9 +52,7 @@ const LogoImg = styled.img`
 const NavbarItems = () => {
     return (
         <NavItemContainer>
-            <NavItem>
-                <Link to="/"><LogoImg src={sdgLogo} alt="sdglogo"/></Link>
-            </NavItem>
+            <Link to="/"><LogoImg src={sdgLogo} alt="sdglogo"/></Link>
             <NavItem>
                 <a href="https://github.com/sindridan" className="nav-link">GitHub</a>
             </NavItem>

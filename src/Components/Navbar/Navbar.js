@@ -8,6 +8,7 @@ const NavbarContainer = styled.div`
   padding-bottom: 1em;
   padding-top: 1em;
   border-bottom: 5px dotted #b6b7b7;
+  
 `
 
 class Navbar extends Component {
