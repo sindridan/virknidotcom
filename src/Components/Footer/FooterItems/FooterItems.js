@@ -8,42 +8,72 @@ const FooterItemContainer = styled.div`
     margin: 0;
     display: flex;
     flex-direction: row;
-    height: 100px;
+
 
     align-items: center;
+    justify-content: center;
     flex-wrap: nowrap;
+`
+const SubFooterItemContainer = styled.div`
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    margin: 0 1em 0 1em;
+
+    align-self: flex-start;
+
+`
+const FooterItemTitle = styled.div`
+    font-weight: bold;
+    font-size: 1.5em;
 `
 
 const FooterItem = styled.div`
-    height: auto;
-    width: auto;
-    display: flex;
-    flex-basis: 100%
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
 
     a, Link {
-        font-size: 30px;
+        font-size: 1.5em;
         text-decoration: none; 
-        padding: 0 20px 0 20px;
-    } 
+        
+        color: #b6b7b7;
+    }
 
-    a:visited { text-decoration: none; black; }
-    a:hover { text-decoration: none; color: green; }
-    a:focus { text-decoration: none; color:yellow; }
-    a:hover, a:active { text-decoration: none; color:black }
+    a:visited { text-decoration: none; #b6b7b7; }
+
+    a:hover, a:active { text-decoration: none; 
+        -moz-transition: all .2s ease-in;
+        -o-transition: all .2s ease-in;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        color: #454545; }
 `
 
 const FooterItems = () => {
     return (
         <FooterItemContainer>
-            <FooterItem>
-                <a href="mailto:sindridan@gmail.com">sindridan@gmail.com</a>
-            </FooterItem>
-            <FooterItem>
-                <a href="https://sindri.org">sindri.org</a>
-            </FooterItem>
+            <SubFooterItemContainer>
+                <FooterItemTitle>Contact</FooterItemTitle>
+                    <FooterItem>
+                        <a href="mailto:sindridan@gmail.com">sindridan@gmail.com</a>
+                    </FooterItem>
+                    <FooterItem>
+                        <a href="mailto:sindrig17@ru.is">sindrig17@ru.is</a>
+                    </FooterItem>
+            </SubFooterItemContainer>
+            
+            <SubFooterItemContainer>
+                <FooterItemTitle>Other domains</FooterItemTitle>
+                    <FooterItem>
+                        <a href="https://sdg.is">sdg.is</a>
+                    </FooterItem>
+                    <FooterItem>
+                        <a href="https://sindri.org">sindri.org</a>
+                    </FooterItem>
+                    <FooterItem>
+                        <a href="https://sindridan.com">sindridan.com</a>
+                    </FooterItem>
+            </SubFooterItemContainer>
         </FooterItemContainer>
     );
 };
