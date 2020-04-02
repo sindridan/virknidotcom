@@ -12,10 +12,15 @@ const CardContainer = styled.li`
 	margin: 0.5em 0 0.5em 0;
 
 	transition: border .2s;
+	/*transition: box-shadow .2s;*/
 	:hover {
 		/*box-shadow: 0 0 10px rgba(33,33,33,.2);*/
 		border-left: 1em solid #b6b7b7;
+		/*box-shadow: inset 1em 0 0 #b6b7b7;*/
+		
 	}
+	max-width: 100%
+	max-height: auto;
 `
 
 const CardSlaveholder = styled.li`
@@ -32,7 +37,7 @@ const DateContainer = styled.div`
 const CardDetails = styled.p`
 	font-style: italic;
 
-	max-width: 75%;
+	max-width: 80%;
 	margin: 0;
 `
 

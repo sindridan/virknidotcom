@@ -20,7 +20,7 @@ const SubFooterItemContainer = styled.div`
     flex-direction: column;
     justify-content: flex-start;
 
-    margin: 0 20px 0 0;
+    margin: 0 3em 0 0;
 
     align-self: flex-start;
 

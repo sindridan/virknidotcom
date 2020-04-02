@@ -2,8 +2,14 @@ import React from 'react';
 import RepoListView from '../RepoListView/RepoListView';
 import { sortedLangs, langsFilter } from '../../Services/GitHubAPIService'
 import PieChart from 'react-minimal-pie-chart';
+import styled from 'styled-components';
 
- 
+
+const GitView = styled.div`
+    display: flex;
+    flex-direction: row;
+
+`
 
 class GitHubAPIView extends React.Component {
     constructor(props) {
@@ -43,12 +49,12 @@ class GitHubAPIView extends React.Component {
 
     render() {
         const { gitData, langs, mappedLangs } = this.state;
-        console.log(this.mapLangs(langs))
-        console.log(JSON.stringify(this.mapLangs(langs))) 
+        //console.log(this.mapLangs(langs))
+        //console.log(JSON.stringify(this.mapLangs(langs))) 
         return (
-            <div>
-                <RepoListView list={ gitData } />
-            </div>
+            <GitView>
+                <RepoListView id="main-repo-list" list={ gitData } />
+            </GitView>
     )}
 };
 

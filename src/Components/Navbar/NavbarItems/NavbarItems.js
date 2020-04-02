@@ -26,7 +26,7 @@ const NavItem = styled.div`
     a, Link {
         font-size: 2em;
         text-decoration: none; 
-        padding: 0 20px 0 20px;
+        margin: 0 0 0 1em;
         color: #b6b7b7;
     }
 

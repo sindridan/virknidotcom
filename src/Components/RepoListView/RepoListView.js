@@ -6,7 +6,9 @@ import styled from 'styled-components';
 const GitItemsUL = styled.ul`
     list-style-type: none;
     -webkit-padding-start: 0;
-    
+    display: flex;
+    flex-direction column;
+
 `
 
 
