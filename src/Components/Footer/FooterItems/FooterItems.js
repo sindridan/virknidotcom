@@ -11,7 +11,7 @@ const FooterItemContainer = styled.div`
 
 
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: nowrap;
 `
 const SubFooterItemContainer = styled.div`
@@ -20,7 +20,7 @@ const SubFooterItemContainer = styled.div`
     flex-direction: column;
     justify-content: flex-start;
 
-    margin: 0 1em 0 1em;
+    margin: 0 20px 0 0;
 
     align-self: flex-start;
 
@@ -63,7 +63,7 @@ const FooterItems = () => {
             </SubFooterItemContainer>
             
             <SubFooterItemContainer>
-                <FooterItemTitle>Other domains</FooterItemTitle>
+                <FooterItemTitle>My domains</FooterItemTitle>
                     <FooterItem>
                         <a href="https://sdg.is">sdg.is</a>
                     </FooterItem>
