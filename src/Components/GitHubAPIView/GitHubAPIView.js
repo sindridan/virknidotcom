@@ -1,7 +1,9 @@
 import React from 'react';
 import RepoListView from '../RepoListView/RepoListView';
 import { sortedLangs, langsFilter } from '../../Services/GitHubAPIService'
-import PieChart from 'react-minimal-pie-chart';
+//import PieChart from 'react-minimal-pie-chart';
+import ReactApexChart from "react-apexcharts";
+
 import styled from 'styled-components';
 
 const GitBodyContainer = styled.div`
@@ -37,7 +39,28 @@ class GitHubAPIView extends React.Component {
         this.state = {
             gitData: [],
             langs: [],
-            mappedLangs: {}
+            mappedLangs: {},
+
+
+            series: [44, 55, 13, 43, 22],
+            options: {
+              chart: {
+                width: 380,
+                type: 'pie',
+              },
+              labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+              responsive: [{
+                breakpoint: 480,
+                options: {
+                  chart: {
+                    width: 200
+                  },
+                  legend: {
+                    position: 'bottom'
+                  }
+                }
+              }]
+            }
         };
     }
     
@@ -49,7 +72,7 @@ class GitHubAPIView extends React.Component {
                 this.setState({
                     gitData: result,
                     langs: result.map(function(el)  {return el.language}).filter(Boolean),
-                    mappedLangs: sortedLangs(langsFilter(result))
+                    mappedLangs: sortedLangs(langsFilter(result)),
                 })
             }
         )
@@ -64,12 +87,17 @@ class GitHubAPIView extends React.Component {
         //const langsMappedArr = Object.keys(counts).map(i => counts[i])
         //console.log(langsMappedArr)
         var arr = Object.entries(counts)
+
+        // dirty fix to isolate languages and counts of them into seperate lists for state
+        var countsList = []
+        var langsList = []
+
         return arr
     }
 
     render() {
         const { gitData, langs, mappedLangs } = this.state;
-        //console.log(this.mapLangs(langs))
+        console.log(this.mapLangs(langs))
         //console.log(JSON.stringify(this.mapLangs(langs))) 
         return (
         
@@ -84,6 +112,7 @@ class GitHubAPIView extends React.Component {
                     <TotalPieView>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/45%25_pie_chart.svg/600px-45%25_pie_chart.svg.png" alt="just a dummy pie chart"/>
                     </TotalPieView>
+                    <ReactApexChart options={this.state.options} series={this.state.series} type="pie" width={380} />
                 </GitView>
             </GitBodyContainer>
             
