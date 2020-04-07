@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 const GitBodyContainer = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-basis: 100%;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -110,15 +110,15 @@ class GitHubAPIView extends React.Component {
         return (
             <GitBodyContainer>
                 <GitView>
-                    <ColTitle>My GitHub repositories</ColTitle>
-                    <RepoListView id="main-repo-list" list={ gitData } />
-                </GitView>
-
-                <GitView>
                     <ColTitle>Repository statistics</ColTitle>
                     <TotalPieView>
                         <ReactApexChart options={this.state.options} series={this.state.series} type="pie" width={600} />
                     </TotalPieView>
+                </GitView>
+                
+                <GitView>
+                    <ColTitle>My GitHub repositories</ColTitle>
+                    <RepoListView id="main-repo-list" list={ gitData } />
                 </GitView>
             </GitBodyContainer>
             

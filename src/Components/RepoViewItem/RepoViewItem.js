@@ -2,7 +2,7 @@ import React from 'react';
 //import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
+import Collapsible from 'react-collapsible';
 
 const CardContainer = styled.li`
 	/* {CardSlaveholder}:nth-child(even) {background: #454545} */
@@ -11,19 +11,23 @@ const CardContainer = styled.li`
 	border-radius: 0.2em;
 	margin: 0.5em 0 0.5em 0;
 
-	transition: border .2s;
 	/*transition: box-shadow .2s;*/
 	:hover {
-		/*box-shadow: 0 0 10px rgba(33,33,33,.2);*/
-		border-left: 1em solid #b6b7b7;
+		-moz-transition: all .2s ease-in;
+        -o-transition: all .2s ease-in;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+		background: #545454;
 		/*box-shadow: inset 1em 0 0 #b6b7b7;*/
-		
+	}
+	:focus {
+		background-color: red;
 	}
 	max-width: 100%
 	max-height: auto;
 `
 
-const CardSlaveholder = styled.li`
+const CardSlaveholder = styled.div`
 
 `
 
@@ -33,7 +37,6 @@ const ProgLangIcon = styled.div`
 const DateContainer = styled.div`
 
 `
-
 const CardDetails = styled.p`
 	font-style: italic;
 
@@ -90,14 +93,15 @@ const RepoViewItem = (props) => {
 		<CardContainer>
 			<CardSlaveholder className="card border-dark mb-3">
 				<ProgLangIcon>{assignLangIcon(props.repoItem.language)}</ProgLangIcon>
-				<div className="card-body">
 					<GitRepoIcon href={ props.repoItem.html_url }>{props.repoItem.name}</GitRepoIcon>
-					<DateContainer>
-						<div>Repository created at: {props.repoItem.created_at}</div>
-						<div>Last updated at: {props.repoItem.updated_at}</div>
-					</DateContainer>
+
 					<CardDetails>{props.repoItem.description}</CardDetails>
-				</div>
+					<Collapsible trigger="Click to expand repository">
+						<DateContainer>
+							<div>Repository created at: {props.repoItem.created_at}</div>
+							<div>Last updated at: {props.repoItem.updated_at}</div>
+						</DateContainer>
+					</Collapsible>
 			</CardSlaveholder>
 		</CardContainer>
 	);

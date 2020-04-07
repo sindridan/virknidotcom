@@ -25,3 +25,12 @@
 .App-link {
   color: #61dafb;
 }
+
+.NavBarSticky {
+  position: fixed;
+  width: 100%;
+}
+
+.MainBodyContainer {
+  margin-top: 30px;
+}

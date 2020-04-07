@@ -7,8 +7,6 @@ import './App.css';
 import styled from 'styled-components';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-
-
 const BodyContainer = styled.div`
     background-color: #242424;
     display: flex;
@@ -20,7 +18,7 @@ const BodyContainer = styled.div`
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <NavBar/>
       <BodyContainer>
         <Switch>
             <Route exact path="/" component={ GitHubAPIView } />
