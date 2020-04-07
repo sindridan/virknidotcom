@@ -11,6 +11,7 @@ const CardContainer = styled.li`
 	border-radius: 0.2em;
 	margin: 0.5em 0 0.5em 0;
 
+	.Collapsible__trigger { display:none }
 	/*transition: box-shadow .2s;*/
 	:hover {
 		-moz-transition: all .2s ease-in;
@@ -19,6 +20,11 @@ const CardContainer = styled.li`
         transition: all .2s ease-in;
 		background: #545454;
 		/*box-shadow: inset 1em 0 0 #b6b7b7;*/
+		.Collapsible__trigger { 
+			display:block; 
+			text-align: center;
+			cursor: pointer;
+		}
 	}
 	:focus {
 		background-color: red;
@@ -96,7 +102,7 @@ const RepoViewItem = (props) => {
 					<GitRepoIcon href={ props.repoItem.html_url }>{props.repoItem.name}</GitRepoIcon>
 
 					<CardDetails>{props.repoItem.description}</CardDetails>
-					<Collapsible trigger="Click to expand repository">
+					<Collapsible trigger="Collapse">
 						<DateContainer>
 							<div>Repository created at: {props.repoItem.created_at}</div>
 							<div>Last updated at: {props.repoItem.updated_at}</div>
