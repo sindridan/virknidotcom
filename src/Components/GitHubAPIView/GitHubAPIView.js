@@ -19,6 +19,27 @@ const GitView = styled.div`
     flex-direction: column;
 `
 
+const GitParagraph = styled.div`
+    font-size: 1em;
+    font-style: italic;
+
+    a, Link {
+        font-size: 1em;
+        text-decoration: none; 
+        
+        color: #b6b7b7;
+    }
+
+    a:visited { text-decoration: none; #b6b7b7; }
+
+    a:hover, a:active { text-decoration: none; 
+        -moz-transition: all .2s ease-in;
+        -o-transition: all .2s ease-in;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        color: #454545; }
+`
+
 const ColTitle = styled.div`
     font-size: 2em;
     font-weight: bold;
@@ -26,7 +47,6 @@ const ColTitle = styled.div`
 
 const ObjectTitle = styled.div`
     font-size: 1em;
-    
 `
 
 const TotalPieView = styled.div`
@@ -112,12 +132,18 @@ class GitHubAPIView extends React.Component {
                 <GitView>
                     <ColTitle>Repository statistics</ColTitle>
                     <TotalPieView>
+                        <GitParagraph>
+                            This pie graph, provided by <a href="https://apexcharts.com/">ApexCharts</a>, shows the collection of the programming languages from your repository. Each slice denotes a programming language and its prevalence in my throughout my public repositories.
+                        </GitParagraph>
                         <ReactApexChart options={this.state.options} series={this.state.series} type="pie" width={600} />
                     </TotalPieView>
                 </GitView>
                 
                 <GitView>
                     <ColTitle>My GitHub repositories</ColTitle>
+                    <GitParagraph>
+                            This collection of repositories below can be found and displayed using the GitHub API available for any user. To see the raw data, checkout: <a href="https://api.github.com/users/sindridan/repos">https://api.github.com/users/sindridan/repos</a>.
+                    </GitParagraph>
                     <RepoListView id="main-repo-list" list={ gitData } />
                 </GitView>
             </GitBodyContainer>

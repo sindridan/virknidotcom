@@ -20,7 +20,14 @@ const CardContainer = styled.li`
         transition: all .2s ease-in;
 		background: #545454;
 		/*box-shadow: inset 1em 0 0 #b6b7b7;*/
-		.Collapsible__trigger { 
+		
+		.Collapsible__trigger.is-closed { 
+			display:block; 
+			text-align: center;
+			cursor: pointer;
+		}
+		
+		.Collapsible__trigger.is-open { 
 			display:block; 
 			text-align: center;
 			cursor: pointer;
@@ -66,7 +73,6 @@ const GitRepoIcon = styled.a`
 
 `
 
-
 function assignLangIcon(lang) {
 
 	switch(lang) {
@@ -93,26 +99,60 @@ function assignLangIcon(lang) {
 			return(<div>{lang}</div>)
 	}
 }
+function triggerIcons(tmp) {
+	if(tmp === "open") {
+		return (<svg class="bi bi-arrows-expand" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		<path fill-rule="evenodd" d="M2 8a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11A.5.5 0 012 8zm6-1.5a.5.5 0 00.5-.5V1.5a.5.5 0 00-1 0V6a.5.5 0 00.5.5z" clip-rule="evenodd"/>
+	  </svg>)
+	} 
+	else if (tmp === "close") {
+		return(
+		<svg class="bi bi-arrows-collapse" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd" d="M2 8a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11A.5.5 0 012 8zm6-7a.5.5 0 01.5.5V6a.5.5 0 01-1 0V1.5A.5.5 0 018 1z" clip-rule="evenodd"/>
+		</svg>)
+	}
+}
 
-const RepoViewItem = (props) => {
-	if(props.repoItem.language != null) { return (
-		<CardContainer>
-			<CardSlaveholder className="card border-dark mb-3">
-				<ProgLangIcon>{assignLangIcon(props.repoItem.language)}</ProgLangIcon>
-					<GitRepoIcon href={ props.repoItem.html_url }>{props.repoItem.name}</GitRepoIcon>
+class RepoViewItem extends React.Component {
+	constructor(props) {
+        super(props);
+        this.state = {
+            triggerOpen: false
+        };
+	}
 
-					<CardDetails>{props.repoItem.description}</CardDetails>
-					<Collapsible trigger="Collapse">
-						<DateContainer>
-							<div>Repository created at: {props.repoItem.created_at}</div>
-							<div>Last updated at: {props.repoItem.updated_at}</div>
-						</DateContainer>
-					</Collapsible>
-			</CardSlaveholder>
-		</CardContainer>
-	);
-	} else {return null}
-};
+	setTrigger() {
+		console.log(this.state.triggerOpen)
+		this.setState({triggerOpen: !this.state.triggerOpen})
+	}
+
+	/*triggerText() {
+		return(
+			<div>
+				<div>{this.state.triggerOpen ? "Open" : "Close" }</div>
+			</div>
+		)
+	}*/
+	
+	render() {
+		if(this.props.repoItem.language != null) { return (
+			<CardContainer>
+				<CardSlaveholder className="card border-dark mb-3">
+					<ProgLangIcon>{assignLangIcon(this.props.repoItem.language)}</ProgLangIcon>
+						<GitRepoIcon href={ this.props.repoItem.html_url }>{this.props.repoItem.name}</GitRepoIcon>
+
+						<CardDetails>{this.props.repoItem.description}</CardDetails>
+						<Collapsible triggerWhenOpen="Collapse" trigger="Click to see more">
+							<DateContainer>
+								<div>Repository created at: {this.props.repoItem.created_at}</div>
+								<div>Last updated at: {this.props.repoItem.updated_at}</div>
+							</DateContainer>
+						</Collapsible>
+				</CardSlaveholder>
+			</CardContainer>
+		);} else {return null}
+	};
+}
 
 RepoViewItem.propTypes = {
 	repoItem: PropTypes.shape({
