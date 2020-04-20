@@ -8,6 +8,7 @@ Usually I'd use TargetProcess or something similar to maintain tasks needed to b
 - [ ] Add total commits, avg of commits and other relevant statistics to the right stats container
 - [ ] Expand repo displaying statistics and information about that repository
 - [ ] Break repository list into 2 seperate columns
+- [ ] Implement other service for the prog langs icons
 - [ ] Order the repositories by their creation date, in descending order from latest repo to oldest
 - [ ] Break the repos into seperate containers by their programming language
 - [ ] Add input box for other users' username of github to display their repositories in same style
