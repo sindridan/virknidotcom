@@ -10,6 +10,8 @@ Usually I'd use TargetProcess or something similar to maintain tasks needed to b
 - [ ] Break repository list into 2 seperate columns
 - [ ] Order the repositories by their creation date, in descending order from latest repo to oldest
 - [ ] Break the repos into seperate containers by their programming language
+- [ ] Add input box for other users' username of github to display their repositories in same style
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
