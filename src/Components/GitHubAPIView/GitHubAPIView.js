@@ -14,9 +14,14 @@ const GitBodyContainer = styled.div`
     justify-content: space-between;
     `
 
-const GitView = styled.div`
+const GitViewRepos = styled.div`
     display: flex;
     flex-direction: column;
+`
+
+const GitViewInfographics = styled.div`
+    display: flex;
+    flex-direction: row;
 `
 
 const GitParagraph = styled.div`
@@ -55,6 +60,10 @@ const TotalPieView = styled.div`
         font-size: 1em !important;
         color: #b6b7b7 !important;
     }
+`
+
+const TotalStatisticsView = styled.div`
+    margin: 1em 0 1em 0;
 `
 
 class GitHubAPIView extends React.Component {
@@ -125,27 +134,40 @@ class GitHubAPIView extends React.Component {
 
     }
 
+    totalCommitsView()
+    {
+        console.log("repo commits: ", this.state.gitData)
+        
+    }
+
     render() {
         const { gitData, langs, mappedLangs, series, options } = this.state;
+        this.totalCommitsView()
         return (
             <GitBodyContainer>
-                <GitView>
-                    <ColTitle>Repository statistics</ColTitle>
+                <ColTitle>Repository statistics</ColTitle>
+                <GitViewInfographics>
                     <TotalPieView>
                         <GitParagraph>
                             This pie graph, provided by <a href="https://apexcharts.com/">ApexCharts</a>, shows the collection of the programming languages from your repository. Each slice denotes a programming language and its prevalence in my throughout my public repositories.
                         </GitParagraph>
                         <ReactApexChart options={this.state.options} series={this.state.series} type="pie" width={600} />
                     </TotalPieView>
-                </GitView>
+                    <TotalStatisticsView>
+                        <GitParagraph>
+                            Below is a collection of statistics related to all the repositories as a whole. 
+                        </GitParagraph>
+
+                    </TotalStatisticsView>
+                </GitViewInfographics>
                 
-                <GitView>
-                    <ColTitle>My GitHub repositories</ColTitle>
+                <ColTitle>My GitHub repositories</ColTitle>
+                <GitViewRepos>
                     <GitParagraph>
                             This collection of repositories below can be found and displayed using the GitHub API available for any user. To see the raw data, checkout: <a href="https://api.github.com/users/sindridan/repos">https://api.github.com/users/sindridan/repos</a>.
                     </GitParagraph>
                     <RepoListView id="main-repo-list" list={ gitData } />
-                </GitView>
+                </GitViewRepos>
             </GitBodyContainer>
             
     )}

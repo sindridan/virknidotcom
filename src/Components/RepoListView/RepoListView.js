@@ -8,9 +8,11 @@ const GitItemsUL = styled.ul`
     -webkit-padding-start: 0;
     padding-left: 0;
     display: flex;
-    flex-direction column;
-
+    flex-direction row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 `
+
 
 
 const RepoListView = (props) => {

@@ -33,11 +33,17 @@ const CardContainer = styled.li`
 			cursor: pointer;
 		}
 	}
-	:focus {
-		background-color: red;
-	}
-	max-width: 100%
+
+	width: 48%;
 	max-height: auto;
+	/*:last-child {
+		flex-grow: 1
+	}*/
+
+	:nth-last-of-type(-n+2):not(:nth-child(even)) {
+		flex-grow: 1;
+	}
+
 `
 
 const CardSlaveholder = styled.div`
@@ -125,14 +131,6 @@ class RepoViewItem extends React.Component {
 		console.log(this.state.triggerOpen)
 		this.setState({triggerOpen: !this.state.triggerOpen})
 	}
-
-	/*triggerText() {
-		return(
-			<div>
-				<div>{this.state.triggerOpen ? "Open" : "Close" }</div>
-			</div>
-		)
-	}*/
 	
 	render() {
 		if(this.props.repoItem.language != null) { return (
