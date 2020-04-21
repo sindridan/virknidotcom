@@ -1,6 +1,6 @@
 # Project details:
 ### Statistics Demonstration for Git
-This website is dedicated to my obsession with infographics and statistics. It displays all my public repositories via the GitHub API.
+This website is dedicated to my obsession with infographics and statistics. It displays all my public repositories using the GitHub API.
 
 ## TODO list
 Usually I'd use TargetProcess or something similar to maintain tasks needed to be done but I wan't to keep this project open to the public so others know my plans for the future
