@@ -128,7 +128,7 @@ class RepoViewItem extends React.Component {
 	}
 
 	setTrigger() {
-		console.log(this.state.triggerOpen)
+		//console.log(this.state.triggerOpen)
 		this.setState({triggerOpen: !this.state.triggerOpen})
 	}
 	

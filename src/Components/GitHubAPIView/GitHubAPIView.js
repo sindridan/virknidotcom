@@ -136,7 +136,7 @@ class GitHubAPIView extends React.Component {
 
     totalCommitsView()
     {
-        console.log("repo commits: ", this.state.gitData)
+        //console.log("repo commits: ", this.state.gitData)
         
     }
 
