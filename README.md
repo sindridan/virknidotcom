@@ -1,13 +1,13 @@
 # Project details:
 ### Statistics Demonstration for Git
-This website is dedicated to my obsession with infographics and statistics. It displays all my public repositories via the GitHub API.
+This website is dedicated to my obsession with infographics and statistics. It displays all my public repositories using the GitHub API.
 
 ## TODO list
 Usually I'd use TargetProcess or something similar to maintain tasks needed to be done but I wan't to keep this project open to the public so others know my plans for the future
-- [ ] Add statistics container to the right side of the pie chart
+- [X] Add statistics container to the right side of the pie chart
 - [ ] Add total commits, avg of commits and other relevant statistics to the right stats container
 - [ ] Expand repo displaying statistics and information about that repository
-- [ ] Break repository list into 2 seperate columns
+- [X] Break repository list into 2 seperate columns
 - [ ] Implement other service for the prog langs icons
 - [ ] Order the repositories by their creation date, in descending order from latest repo to oldest
 - [ ] Break the repos into seperate containers by their programming language
