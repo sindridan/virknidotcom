@@ -6,6 +6,10 @@ This website is dedicated to my obsession with infographics and statistics. It d
 Usually I'd use TargetProcess or something similar to maintain tasks needed to be done but I wan't to keep this project open to the public so others know my plans for the future
 - [X] Add statistics container to the right side of the pie chart
 - [ ] Add total commits, avg of commits and other relevant statistics to the right stats container
+  - [ ] Display total of all public repos
+  - [ ] Display total of all commits
+  - [ ] Display avg of commits per repo
+    - [ ] Display user commits in relation to total of all commits per repo
 - [ ] Expand repo displaying statistics and information about that repository
 - [X] Break repository list into 2 seperate columns
 - [ ] Implement other service for the prog langs icons
