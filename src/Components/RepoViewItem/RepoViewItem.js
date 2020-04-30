@@ -40,10 +40,11 @@ const CardContainer = styled.li`
 		flex-grow: 1
 	}*/
 
+	/*
 	:nth-last-of-type(-n+2):not(:nth-child(even)) {
 		flex-grow: 1;
 	}
-
+	*/
 `
 
 const CardSlaveholder = styled.div`
