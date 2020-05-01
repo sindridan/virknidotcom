@@ -1,5 +1,6 @@
-# Project details:
-### Statistics Demonstration for Git
+# GitCrawler
+## Project details:
+## Statistics Demonstration for Git
 This website is dedicated to my obsession with infographics and statistics. It displays all my public repositories using the GitHub API.
 
 ## TODO list
