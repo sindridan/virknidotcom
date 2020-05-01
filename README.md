@@ -3,7 +3,8 @@
 This website is dedicated to my obsession with infographics and statistics. It displays all my public repositories using the GitHub API.
 
 ## TODO list
-Usually I'd use TargetProcess or something similar to maintain tasks needed to be done but I wan't to keep this project open to the public so others know my plans for the future
+Usually I'd use TargetProcess or something similar to maintain tasks needed to be done but I wan't to keep this project open to the public so others know my plans for the future.
+### Tasks to be finished before beta release
 - [X] Add statistics container to the right side of the pie chart
 - [ ] Add total commits, avg of commits and other relevant statistics to the right stats container
   - [ ] Display total of all public repos
@@ -17,6 +18,10 @@ Usually I'd use TargetProcess or something similar to maintain tasks needed to b
 - [ ] Break the repos into seperate containers by their programming language
 - [ ] Add input box for other users' username of github to display their repositories in same style
 
+### Tasks before "retail" release
+- [ ] Make all graphs be downloadable to a SVG or PDF
+- [ ] Radio buttons to display either GitHub, GitLab or Bitbucket for a single user
+- [ ] Side by side comparisons for two (2) users
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
