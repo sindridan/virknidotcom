@@ -20,6 +20,7 @@ Usually I'd use TargetProcess or something similar to maintain tasks needed to b
 - [ ] Add input box for other users' username of github to display their repositories in same style
 
 ### Tasks before "retail" release: 1.0
+- [ ] Mobile friendly: @media on more containers and single column for entire front page
 - [ ] Make all graphs be downloadable to a SVG or PDF
 - [ ] Radio buttons to display either GitHub, GitLab or Bitbucket for a single user
 - [ ] Side by side comparisons for two (2) users
