@@ -6,6 +6,10 @@ This website is dedicated to my obsession with infographics and statistics. It d
 ## TODO list
 Usually I'd use TargetProcess or something similar to maintain tasks needed to be done but I wan't to keep this project open to the public so others know my plans for the future.
 
+### Current release: 0.1 (03.04.2020)
+
+### Next release: 0.2 (01.06.2020)
+
 ### Frontend tasks
 #### Tasks to be finished before beta release: 0.2
 - [X] Add statistics container to the right side of the pie chart
