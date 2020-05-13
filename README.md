@@ -24,6 +24,8 @@ Usually I'd use TargetProcess or something similar to maintain tasks needed to b
 - [ ] Break the repos into seperate containers by their programming language
 - [ ] Add input box for other users' username of github to display their repositories in same style
 - [ ] Tracker on navbar for current release of GitCrawler
+- [ ] Incorporate TypeScript for consistency of fonts, colors, data types etc.
+
 
 ### Tasks before "retail" release: 1.0
 - [ ] Mobile friendly: @media on more containers and single column for entire front page
@@ -31,6 +33,7 @@ Usually I'd use TargetProcess or something similar to maintain tasks needed to b
 - [ ] Radio buttons to display either GitHub, GitLab or Bitbucket for a single user
 - [ ] Side by side comparisons for two (2) users
 - [ ] Display all public repositories where user is a contributor, not just a owner.
+
 
 
 ### Backend tasks
