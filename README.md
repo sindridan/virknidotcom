@@ -25,6 +25,9 @@ Usually I'd use TargetProcess or something similar to maintain tasks needed to b
 - [ ] Add input box for other users' username of github to display their repositories in same style
 - [ ] Tracker on navbar for current release of GitCrawler
 - [ ] Incorporate TypeScript for consistency of fonts, colors, data types etc.
+- [ ] New logo from wix
+- [ ] Change links on front page
+- [ ] Change footer links, unnecessary "other domains"
 
 
 ### Tasks before "retail" release: 1.0
