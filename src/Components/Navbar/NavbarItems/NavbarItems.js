@@ -39,20 +39,42 @@ const NavItem = styled.div`
         transition: all .2s ease-in;
         background-color: #454545; }
 `
-const LogoImg = styled.img`
+
+const NavTitle = styled(Link)`
+    height: auto;
+    width: auto;
+
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none; 
+    color: #b6b7b7;
+    
+    &:visited { text-decoration: none; #b6b7b7; }
+
+    &:hover, &:active { text-decoration: none; 
+        -moz-transition: all .2s ease-in;
+        -o-transition: all .2s ease-in;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        background-color: #454545; }
+
+    position: absolute;
+    left: 0;
+`
+/* old title logo css module
+const NavLogo = styled.div`
     max-height: 100px;
     max-width: auto;
 
     position: absolute;
     border-radius: 50%;
-    top: 0;
     left: 0;
 `
-
+*/
 const NavbarItems = () => {
     return (
         <NavItemContainer>
-            <Link to="/"><LogoImg src={sdgLogo} alt="sdglogo"/></Link>
+            <NavTitle to="/">GitCrawler</NavTitle>
             <NavItem>
                 <a href="https://github.com/sindridan" className="nav-link">GitHub</a>
             </NavItem>

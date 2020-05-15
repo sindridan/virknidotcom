@@ -161,7 +161,7 @@ class GitHubAPIView extends React.Component {
                     </TotalStatisticsView>
                 </GitViewInfographics>
                 
-                <ColTitle>My GitHub repositories</ColTitle>
+                <ColTitle>My public GitHub repositories</ColTitle>
                 <GitViewRepos>
                     <GitParagraph>
                             This collection of repositories below can be found and displayed using the GitHub API available for any user. To see the raw data, checkout: <a href="https://api.github.com/users/sindridan/repos">https://api.github.com/users/sindridan/repos</a>.
