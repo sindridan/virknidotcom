@@ -37,7 +37,9 @@ const NavItem = styled.div`
         -o-transition: all .2s ease-in;
         -webkit-transition: all .2s ease-in;
         transition: all .2s ease-in;
-        background-color: #454545; }
+        background-color: #454545; 
+
+    }
 `
 
 const NavTitle = styled(Link)`
@@ -56,8 +58,9 @@ const NavTitle = styled(Link)`
         -o-transition: all .2s ease-in;
         -webkit-transition: all .2s ease-in;
         transition: all .2s ease-in;
-        background-color: #454545; }
-
+        background-color: #454545; 
+    }
+    
     position: absolute;
     left: 0;
 `

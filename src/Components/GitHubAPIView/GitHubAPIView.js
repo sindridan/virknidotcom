@@ -142,7 +142,7 @@ class GitHubAPIView extends React.Component {
 
     render() {
         const { gitData, langs, mappedLangs, series, options } = this.state;
-        this.totalCommitsView()
+        //this.totalCommitsView()
         return (
             <GitBodyContainer>
                 <ColTitle>Repository statistics</ColTitle>

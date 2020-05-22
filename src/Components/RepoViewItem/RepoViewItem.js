@@ -13,6 +13,12 @@ const CardContainer = styled.li`
 
 	.Collapsible__trigger { display:none }
 	/*transition: box-shadow .2s;*/
+
+
+	-webkit-box-shadow: 0 8px 6px -6px black;
+		-moz-box-shadow: 0 8px 6px -6px black;
+			box-shadow: 0 8px 6px -6px black;
+			
 	:hover {
 		-moz-transition: all .2s ease-in;
         -o-transition: all .2s ease-in;
