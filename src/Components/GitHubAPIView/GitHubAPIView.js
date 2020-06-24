@@ -134,14 +134,8 @@ class GitHubAPIView extends React.Component {
 
     }
 
-    totalCommitsView()
-    {
-        //console.log("repo commits: ", this.state.gitData)
-        
-    }
-
     render() {
-        const { gitData, langs, mappedLangs, series, options } = this.state;
+        const { gitData } = this.state;
         //this.totalCommitsView()
         return (
             <GitBodyContainer>
@@ -149,7 +143,7 @@ class GitHubAPIView extends React.Component {
                 <GitViewInfographics>
                     <TotalPieView>
                         <GitParagraph>
-                            This pie graph, provided by <a href="https://apexcharts.com/">ApexCharts</a>, shows the collection of the programming languages from your repository. Each slice denotes a programming language and its prevalence in my throughout my public repositories.
+                            This pie graph, provided by <a href="https://apexcharts.com/">ApexCharts</a>, shows the collection of the programming languages from your repository. Each slice denotes a programming language and its prevalence in your public GitHub repositories.
                         </GitParagraph>
                         <ReactApexChart options={this.state.options} series={this.state.series} type="pie" width={600} />
                     </TotalPieView>

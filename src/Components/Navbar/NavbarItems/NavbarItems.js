@@ -2,7 +2,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import styled from 'styled-components';
-import sdgLogo from '../../../Artefacts/bigstan.PNG';
 
 
 const NavItemContainer = styled.div`
