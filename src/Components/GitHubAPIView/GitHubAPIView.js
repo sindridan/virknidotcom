@@ -1,6 +1,7 @@
 import React from 'react';
-import RepoListView from '../RepoListView/RepoListView';
+import RepoListView from '../RepoListView/RepoListView'
 import { sortedLangs, langsFilter } from '../../Services/GitHubAPIService'
+import TotalStatistics from '../TotalStatistics/TotalStatistics'
 //import PieChart from 'react-minimal-pie-chart';
 import ReactApexChart from "react-apexcharts";
 
@@ -71,6 +72,7 @@ class GitHubAPIView extends React.Component {
         super(props);
         this.state = {
             gitData: [],
+            totalStats: [],
             langs: [],
             mappedLangs: {},
 
@@ -103,6 +105,7 @@ class GitHubAPIView extends React.Component {
             (result) => {
                 this.setState({
                     gitData: result,
+                    totalStats: [0,0,0,0],
                     langs: result.map(function(el)  {return el.language}).filter(Boolean),
                     mappedLangs: sortedLangs(langsFilter(result)),
                 })
@@ -134,9 +137,10 @@ class GitHubAPIView extends React.Component {
 
     }
 
+
+
     render() {
         const { gitData } = this.state;
-        //this.totalCommitsView()
         return (
             <GitBodyContainer>
                 <ColTitle>Repository statistics</ColTitle>
@@ -151,6 +155,7 @@ class GitHubAPIView extends React.Component {
                         <GitParagraph>
                             Below is a collection of statistics related to all the repositories as a whole. 
                         </GitParagraph>
+                        <TotalStatistics {...this.state.totalStats}/>
 
                     </TotalStatisticsView>
                 </GitViewInfographics>

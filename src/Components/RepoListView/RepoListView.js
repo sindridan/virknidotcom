@@ -22,7 +22,7 @@ const RepoListView = (props) => {
                 { props.list.map(repo => <RepoViewItem key={ repo.id } repoItem={ repo } />) }
             </GitItemsUL>
         );    
-    } else { return (<div><h1>No Repos found</h1></div>) }
+    } else { return (<div><h1>No public repositories found</h1></div>) }
         
 };
 
