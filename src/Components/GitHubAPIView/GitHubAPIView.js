@@ -3,7 +3,8 @@ import RepoListView from '../RepoListView/RepoListView'
 import { sortedLangs, langsFilter } from '../../Services/GitHubAPIService'
 import TotalStatistics from '../TotalStatistics/TotalStatistics'
 //import PieChart from 'react-minimal-pie-chart';
-import ReactApexChart from "react-apexcharts";
+import ReactApexChart from 'react-apexcharts'
+import axios from 'axios'
 
 import styled from 'styled-components';
 
@@ -72,7 +73,7 @@ class GitHubAPIView extends React.Component {
         super(props);
         this.state = {
             gitData: [],
-            totalStats: [],
+            totalStatsList: {},
             langs: [],
             mappedLangs: {},
 
@@ -105,11 +106,12 @@ class GitHubAPIView extends React.Component {
             (result) => {
                 this.setState({
                     gitData: result,
-                    totalStats: [0,0,0,0],
+                    //totalStatsList: this.totalStatsCalc(result),
                     langs: result.map(function(el)  {return el.language}).filter(Boolean),
                     mappedLangs: sortedLangs(langsFilter(result)),
                 })
                 this.mapLangs(this.state.langs)
+                this.totalStatsCalc(result)
             }
         )
         
@@ -137,10 +139,62 @@ class GitHubAPIView extends React.Component {
 
     }
 
+    getAllData(URLs){
+        return Promise.all(URLs.map(this.fetchData));
+      }
+      
+    fetchData(URL) {
+    return axios
+        .get(URL)
+        .then(function(response) {
+        return {
+            success: true,
+            data: response.data
+        };
+        })
+        .catch(function(error) {
+        return { success: false };
+        });
+    }
+
+    githubAPIParser(data)
+    {
+        console.log(data)
+        // get all contributors in url
+        var contributorsURL = []
+        for(var i = 0; i < data.length; i++)
+        {
+            contributorsURL.push(data[i].contributors_url)
+        }
+        console.log(contributorsURL)
+        var contributors = []
+    
+        this.getAllData(contributorsURL).then(resp=>{console.log(resp)}).catch(e=>{console.log(e)})
+
+
+        console.log("contributors after axios: ", contributors)
+    } 
+
+    totalCommitsCalc(data)
+    {
+        //this.githubAPIParser(data)
+        return 0
+    }
+
+    totalStatsCalc(data)
+    {
+        var totalRepos = data.length
+        var totalCommits = this.totalCommitsCalc(data)
+        var avgCommits = 0
+        //var avgCommitsVSContributors = data.length
+        
+        this.setState({totalStatsList: {totalRepos, totalCommits, avgCommits}})
+    }
+
 
 
     render() {
-        const { gitData } = this.state;
+        const { gitData, totalStatsList } = this.state;
         return (
             <GitBodyContainer>
                 <ColTitle>Repository statistics</ColTitle>
@@ -155,7 +209,7 @@ class GitHubAPIView extends React.Component {
                         <GitParagraph>
                             Below is a collection of statistics related to all the repositories as a whole. 
                         </GitParagraph>
-                        <TotalStatistics {...this.state.totalStats}/>
+                        <TotalStatistics repoStats={ totalStatsList }/>
 
                     </TotalStatisticsView>
                 </GitViewInfographics>

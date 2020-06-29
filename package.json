@@ -6,6 +6,7 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "apexcharts": "^3.17.1",
+    "axios": "^0.19.2",
     "babel": "^6.23.0",
     "prismic-javascript": "^2.0.3",
     "prismic-reactjs": "^1.0.0",

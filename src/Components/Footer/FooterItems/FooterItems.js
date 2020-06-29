@@ -68,15 +68,15 @@ const FooterItems = () => {
             </SubFooterItemContainer>
             
             <SubFooterItemContainer>
-                <FooterItemTitle>My domains</FooterItemTitle>
+                <FooterItemTitle>External links</FooterItemTitle>
                     <FooterItem>
                         <a href="https://sdg.is">sdg.is</a>
                     </FooterItem>
                     <FooterItem>
-                        <a href="https://sindri.org">sindri.org</a>
+                        <a href="https://github.com/sindridan">GitHub</a>
                     </FooterItem>
                     <FooterItem>
-                        <a href="https://sindridan.com">sindridan.com</a>
+                        <a href="https://linkedin.com/in/sindridan">LinkedIn</a>
                     </FooterItem>
             </SubFooterItemContainer>
         </FooterItemContainer>
