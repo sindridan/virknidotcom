@@ -7,6 +7,7 @@ import ReactApexChart from 'react-apexcharts'
 import axios from 'axios'
 
 import styled from 'styled-components';
+import { parse } from '@babel/core';
 
 const GitBodyContainer = styled.div`
     display: flex;
@@ -68,10 +69,56 @@ const TotalStatisticsView = styled.div`
     margin: 1em 0 1em 0;
 `
 
+const FPForm = styled.form`
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+`
+
+const InputBox = styled.input`
+    font-size: 2em;
+    font-weight: bold;
+    border: none
+
+    :focus::placeholder {
+        color: transparent;
+    }
+
+    min-width: 250px
+    padding-left: 5px
+    outline: none
+
+    flex-grow: 1;
+
+    background: #454545;
+    color: #b6b7b7;
+
+    border-radius: 0.2em;
+    margin: 0.5em 0 0.5em 0;
+
+    -webkit-box-shadow: 0 8px 6px -6px black;
+        -moz-box-shadow: 0 8px 6px -6px black;
+            box-shadow: 0 8px 6px -6px black;
+            
+    max-width: 100%;
+    max-height: auto;
+
+`
+
+const SubmitButton = styled.input`
+`
+
+
 class GitHubAPIView extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            gitUserURL: "https://api.github.com/users/sindridan",
+            gitUserReposURL: "https://api.github.com/users/sindridan/repos",
+            gitUser: "sindridan",
+            gitUserFullName: "Sindri Dan Garðarsson",
             gitData: [],
             totalStatsList: {},
             langs: [],
@@ -97,10 +144,13 @@ class GitHubAPIView extends React.Component {
               }]
             }
         };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
     }
     
     componentDidMount() {
-        fetch('https://api.github.com/users/sindridan/repos')
+        fetch(this.state.gitUserReposURL)
         .then(res => res.json())
         .then(
             (result) => {
@@ -114,7 +164,6 @@ class GitHubAPIView extends React.Component {
                 this.totalStatsCalc(result)
             }
         )
-        
     }
 
     mapLangs(langs)
@@ -177,6 +226,7 @@ class GitHubAPIView extends React.Component {
 
     totalCommitsCalc(data)
     {
+        // the main issue with this is multiple api requests and the GitHub API rate limit, 60 per hour
         //this.githubAPIParser(data)
         return 0
     }
@@ -191,13 +241,39 @@ class GitHubAPIView extends React.Component {
         this.setState({totalStatsList: {totalRepos, totalCommits, avgCommits}})
     }
 
+    handleSubmit(event){
+        event.preventDefault()
 
+        fetch(this.state.gitUserReposURL)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState({
+                    gitData: result,
+                    //totalStatsList: this.totalStatsCalc(result),
+                    langs: result.map(function(el)  {return el.language}).filter(Boolean),
+                    mappedLangs: sortedLangs(langsFilter(result)),
+                })
+                this.mapLangs(this.state.langs)
+                this.totalStatsCalc(result)
+            }
+        )
+    };
+
+    handleChange(event) {
+        
+        var parsedURL = String('https://api.github.com/users/' + event.target.value + '/repos')
+        this.setState({gitUserReposURL: parsedURL, gitUser: event.target.value})
+    }
 
     render() {
         const { gitData, totalStatsList } = this.state;
         return (
             <GitBodyContainer>
-                <ColTitle>Repository statistics</ColTitle>
+                <FPForm onSubmit={this.handleSubmit}>
+                    <InputBox type="text" placeholder="Your GitHub username..." value={this.state.value} onChange={this.handleChange} />
+                </FPForm>
+                <ColTitle>Repository statistics for {this.state.gitUser}</ColTitle>
                 <GitViewInfographics>
                     <TotalPieView>
                         <GitParagraph>
@@ -214,10 +290,10 @@ class GitHubAPIView extends React.Component {
                     </TotalStatisticsView>
                 </GitViewInfographics>
                 
-                <ColTitle>My public GitHub repositories</ColTitle>
+                <ColTitle>{this.state.gitUser}'s public GitHub repositories</ColTitle>
                 <GitViewRepos>
                     <GitParagraph>
-                            This collection of repositories below can be found and displayed using the GitHub API available for any user. To see the raw data, checkout: <a href="https://api.github.com/users/sindridan/repos">https://api.github.com/users/sindridan/repos</a>.
+                            This collection of repositories below can be found and displayed using the GitHub API available for any user. To see the raw data, click here: <a href={this.state.gitUserURL}>{this.state.gitUser}</a>.
                     </GitParagraph>
                     <RepoListView id="main-repo-list" list={ gitData } />
                 </GitViewRepos>

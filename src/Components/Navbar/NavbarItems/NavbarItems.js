@@ -63,6 +63,15 @@ const NavTitle = styled(Link)`
     position: absolute;
     left: 0;
 `
+const VersionController = styled.div`
+    height: auto;
+    width: auto;
+
+    font-size: 1em;
+    text-decoration: none; 
+    color: #b6b7b7;
+    text-align: right;
+`
 /* old title logo css module
 const NavLogo = styled.div`
     max-height: 100px;
@@ -75,6 +84,8 @@ const NavLogo = styled.div`
 */
 const NavbarItems = () => {
     return (
+    <div>
+        <VersionController>Alpha version</VersionController>
         <NavItemContainer>
             <NavTitle to="/">GitCrawler</NavTitle>
             <NavItem>
@@ -84,6 +95,7 @@ const NavbarItems = () => {
                 <a href="https://linkedin.com/in/sindridan" className="nav-link">LinkedIn</a>
             </NavItem>
         </NavItemContainer>
+    </div>
     );
 };
 
