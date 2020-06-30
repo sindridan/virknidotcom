@@ -251,6 +251,7 @@ class GitHubAPIView extends React.Component {
                 this.setState({
                     gitData: result,
                     //totalStatsList: this.totalStatsCalc(result),
+                    gitUser: result[0].owner.login, //this is a terrible solution, need name from /user/
                     langs: result.map(function(el)  {return el.language}).filter(Boolean),
                     mappedLangs: sortedLangs(langsFilter(result)),
                 })
@@ -261,9 +262,9 @@ class GitHubAPIView extends React.Component {
     };
 
     handleChange(event) {
-        
+
         var parsedURL = String('https://api.github.com/users/' + event.target.value + '/repos')
-        this.setState({gitUserReposURL: parsedURL, gitUser: event.target.value})
+        this.setState({gitUserReposURL: parsedURL})
     }
 
     render() {
