@@ -3,51 +3,9 @@
 ## Statistics Demonstration for Git
 This website is dedicated to my obsession with infographics and statistics. It displays all my public repositories using the GitHub API.
 
-## TODO list
-Usually I'd use TargetProcess or something similar to maintain tasks needed to be done but I wan't to keep this project open to the public so others know my plans for the future.
+## Notes to developer
 
-### Current release: 0.1 (03.04.2020)
-
-### Next release: 0.2 (01.06.2020)
-
-### Frontend tasks
-#### Tasks to be finished before beta release: 0.2
-- [X] Add statistics container to the right side of the pie chart
-- [ ] Add total commits, avg of commits and other relevant statistics to the right stats container
-  - [ ] Display total of all public repos
-  - [ ] Display total of all commits
-  - [ ] Display avg of commits per repo
-    - [ ] Display user commits in relation to total of all commits per repo
-- [ ] Expand repo displaying statistics and information about that repository
-- [X] Break repository list into 2 seperate columns
-- [ ] Order the repositories by their creation date, in descending order from latest repo to oldest
-- [ ] Break the repos into seperate containers by their programming language
-- [ ] Add input box for other users' username of github to display their repositories in same style
-- [ ] Tracker on navbar for current release of GitCrawler
-- [ ] Incorporate TypeScript for consistency of fonts, colors, data types etc.
-- [ ] New logo from wix
-- [ ] Change links on front page
-- [ ] Change footer links, unnecessary "other domains"
-
-
-### Tasks before "retail" release: 1.0
-- [ ] Mobile friendly: @media on more containers and single column for entire front page
-- [ ] Make all graphs be downloadable to a SVG or PDF
-- [ ] Radio buttons to display either GitHub, GitLab or Bitbucket for a single user
-- [ ] Side by side comparisons for two (2) users
-- [ ] Display all public repositories where user is a contributor, not just a owner.
-
-
-
-### Backend tasks
-#### Tasks to be finished before beta release: 0.2
-- [ ] Implement other service for the prog langs icons
-- [ ] Implement tracker service for release of GitCrawler
-
-
-### Tasks before "retail" release: 1.0
-- [ ] Make all graphs be downloadable to a SVG or PDF
-
+After publishing latest changes to master and ready to deploy, then run the following: `npm run build` to build the project and then `firebase deploy` to publsh it.
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
