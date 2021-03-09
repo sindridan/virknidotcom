@@ -1,7 +1,7 @@
 import React from 'react';
 import RepoListView from '../RepoListView/RepoListView'
 import { sortedLangs, langsFilter } from '../../Services/GitHubAPIService'
-import TotalStatistics from '../TotalStatistics/TotalStatistics'
+//import TotalStatistics from '../TotalStatistics/TotalStatistics' //TODO: needs a component for view next to piebar
 //import PieChart from 'react-minimal-pie-chart';
 import ReactApexChart from 'react-apexcharts'
 import axios from 'axios'
@@ -250,7 +250,7 @@ class GitHubAPIView extends React.Component {
             (result) => {
                 this.setState({
                     gitData: result,
-                    //totalStatsList: this.totalStatsCalc(result),
+                    totalStatsList: this.totalStatsCalc(result),
                     gitUser: result[0].owner.login, //this is a terrible solution, need name from /user/
                     langs: result.map(function(el)  {return el.language}).filter(Boolean),
                     mappedLangs: sortedLangs(langsFilter(result)),
@@ -266,6 +266,8 @@ class GitHubAPIView extends React.Component {
         var parsedURL = String('https://api.github.com/users/' + event.target.value + '/repos')
         this.setState({gitUserReposURL: parsedURL})
     }
+    //<TotalStatistics repoStats={ totalStatsList }/>
+
 
     render() {
         const { gitData, totalStatsList } = this.state;
@@ -286,8 +288,6 @@ class GitHubAPIView extends React.Component {
                         <GitParagraph>
                             Below is a collection of statistics related to all the repositories as a whole. 
                         </GitParagraph>
-                        <TotalStatistics repoStats={ totalStatsList }/>
-
                     </TotalStatisticsView>
                 </GitViewInfographics>
                 

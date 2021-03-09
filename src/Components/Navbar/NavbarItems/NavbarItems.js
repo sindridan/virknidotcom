@@ -86,7 +86,7 @@ const NavbarItems = () => {
     <div>
         <VersionController>Alpha version</VersionController>
         <NavItemContainer>
-            <NavTitle to="/">GitCrawler</NavTitle>
+            <NavTitle to="/">VIRKNI</NavTitle>
             <NavItem>
                 <a href="https://github.com/sindridan" className="nav-link">GitHub</a>
             </NavItem>
